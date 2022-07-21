@@ -50,7 +50,7 @@ namespace WEB1001_To_Do_App
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=ToDo}/{action=Index}/{id?}");
             });
         }
     }

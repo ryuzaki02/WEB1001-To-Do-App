@@ -26,6 +26,7 @@ namespace WEB1001_To_Do_App
 
     public class ToDoModel
 	{
+        [Key]
 		public int ToDoModelId { get; set; }
 		[Required]
 		public bool IsCompleted { get; set; }
