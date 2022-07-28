@@ -86,18 +86,26 @@ namespace WEB1001_To_Do_App.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ToDoModelId,IsCompleted,CompletionDate,Description")] ToDoModel toDoModel)
+        public async Task<IActionResult> Edit(int id, [FromForm] ToDoModel toDoModel)
         {
-            if (id != toDoModel.ToDoModelId)
-            {
-                return NotFound();
-            }
+            //Just get all the objects from database
+            // take todo model id
+            // compare from db objects and updated isCompleted variable
+            // save it again to database
 
-            if (ModelState.IsValid)
+            List<ToDoModel> models = await _context.ToDo.ToListAsync();
+            ToDoModel model = models.First(model => model.ToDoModelId == toDoModel.ToDoModelId);
+
+            if (model == null)
             {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                model.IsCompleted = toDoModel.IsCompleted;
                 try
                 {
-                    _context.Update(toDoModel);
+                    _context.Update(model);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -113,7 +121,6 @@ namespace WEB1001_To_Do_App.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(toDoModel);
         }
 
         [HttpPost]
@@ -146,6 +153,7 @@ namespace WEB1001_To_Do_App.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ToDoList"] = await _context.ToDo.ToListAsync();
             return View();
         }
 

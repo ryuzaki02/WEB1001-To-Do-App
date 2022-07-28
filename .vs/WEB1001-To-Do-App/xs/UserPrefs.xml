@@ -1,5 +1,7 @@
 ﻿<Properties StartupConfiguration="{9F1C1FA5-C315-407C-8CC2-95267E92F5A5}|Default">
+  <MonoDevelop.Ide.ItemProperties.WEB1001-To-Do-App PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/Controllers/ToDoController.cs" relfile="WEB1001-To-Do-App/Controllers/ToDoController.cs" line="71" column="1" />
@@ -7,22 +9,23 @@
       <Breakpoint file="/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/Controllers/ToDoController.cs" relfile="WEB1001-To-Do-App/Controllers/ToDoController.cs" line="124" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="WEB1001-To-Do-App/Controllers/ToDoController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WEB1001-To-Do-App/Views/ToDo/Index.cshtml">
     <Files>
       <File FileName="WEB1001-To-Do-App/Models/ToDoModel.cs" Line="38" Column="2" />
-      <File FileName="WEB1001-To-Do-App/Program.cs" Line="1" Column="1" />
+      <File FileName="WEB1001-To-Do-App/Program.cs" Line="16" Column="1" />
       <File FileName="WEB1001-To-Do-App/Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="WEB1001-To-Do-App/Views/Home/Index.cshtml" Line="7" Column="7" />
       <File FileName="WEB1001-To-Do-App/appsettings.json" Line="1" Column="1" />
       <File FileName="WEB1001-To-Do-App/Startup.cs" Line="54" Column="47" />
-      <File FileName="WEB1001-To-Do-App/Controllers/ToDoController.cs" Line="128" Column="1" />
+      <File FileName="WEB1001-To-Do-App/Controllers/ToDoController.cs" Line="89" Column="64" />
       <File FileName="WEB1001-To-Do-App/Migrations/ToDoContextModelSnapshot.cs" Line="1" Column="1" />
       <File FileName="WEB1001-To-Do-App/Migrations/20220721213448_InitialCreate.cs" Line="24" Column="10" />
       <File FileName="WEB1001-To-Do-App/Views/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="WEB1001-To-Do-App/Views/ToDo/Create.cshtml" Line="35" Column="7" />
-      <File FileName="WEB1001-To-Do-App/Views/ToDo/Edit.cshtml" Line="28" Column="42" />
+      <File FileName="WEB1001-To-Do-App/Views/ToDo/Create.cshtml" Line="31" Column="52" />
+      <File FileName="WEB1001-To-Do-App/Views/ToDo/Edit.cshtml" Line="15" Column="59" />
       <File FileName="WEB1001-To-Do-App/Views/ToDo/Details.cshtml" Line="1" Column="1" />
-      <File FileName="WEB1001-To-Do-App/Views/ToDo/Index.cshtml" Line="36" Column="46" />
+      <File FileName="WEB1001-To-Do-App/Views/ToDo/Index.cshtml" Line="46" Column="30" />
+      <File FileName="WEB1001-To-Do-App/Views/ToDo/Delete.cshtml" Line="35" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,13 +33,13 @@
           <Node name="WEB1001-To-Do-App" expanded="True">
             <Node name="WEB1001-To-Do-App" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="ToDoController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="ToDo" expanded="True" />
+                <Node name="ToDo" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -48,6 +51,4 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.WEB1001-To-Do-App PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
