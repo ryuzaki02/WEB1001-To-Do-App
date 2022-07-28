@@ -21,7 +21,8 @@ namespace WEB1001_To_Do_App.Controllers
         // GET: ToDo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ToDo.ToListAsync());
+            ViewData["ToDoList"] = await _context.ToDo.ToListAsync();
+            return View();
         }
 
         // GET: ToDo/Details/5
@@ -113,6 +114,39 @@ namespace WEB1001_To_Do_App.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(toDoModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Index")]
+        public async Task<IActionResult> Index2(int id, [FromForm] ToDoModel toDoModel)
+        {
+            if (id != toDoModel.ToDoModelId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(toDoModel);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ToDoModelExists(toDoModel.ToDoModelId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
         }
 
         // GET: ToDo/Delete/5

@@ -1,47 +1,64 @@
-@model IEnumerable<WEB1001_To_Do_App.ToDoModel>
+@*@model IEnumerable<WEB1001_To_Do_App.ToDoModel>*@
+
+@model ToDoModel
 
 @{
     ViewData["Title"] = "Index";
+    var ToDoList = (IEnumerable<ToDoModel>)ViewData["ToDoList"];
 }
 
 <h1>Index</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IsCompleted)
+                Is Completed
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CompletionDate)
+                Completion Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                Description
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsCompleted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompletionDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ToDoModelId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ToDoModelId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ToDoModelId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in ToDoList)
+        {
+            <tr>
+                <td>
+                    <form asp-action="Index">
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input asp-for="@item" type="hidden" />
+                                <input class="form-check-input" asp-for="@item.IsCompleted" /> @Html.DisplayNameFor(modelItem => item.IsCompleted)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ToDoModelId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ToDoModelId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ToDoModelId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<partial name="Create" class="ToDoModel"/>
