@@ -164,8 +164,10 @@
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/bin/Debug/net5.0/runtimes/win-arm64/lib/net5.0/dotnet-aspnet-codegenerator-design.exe
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/ToDo/Create.cshtml.g.cs
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/ToDo/Delete.cshtml.g.cs
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/ToDo/Details.cshtml.g.cs
-/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/ToDo/Edit.cshtml.g.cs
 /Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/ToDo/Index.cshtml.g.cs
+/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/Shared/_CreatePartial.cshtml.g.cs
+/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/Shared/_DeletePartial.cshtml.g.cs
+/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/Shared/_Edit.cshtml.g.cs
+/Users/aman/Documents/Projects/Cambrian-Web/WEB1001-To-Do-App/WEB1001-To-Do-App/obj/Debug/net5.0/Razor/Views/Shared/_EditPartial.cshtml.g.cs

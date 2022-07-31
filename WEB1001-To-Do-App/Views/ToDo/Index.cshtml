@@ -1,20 +1,36 @@
-@*@model IEnumerable<WEB1001_To_Do_App.ToDoModel>*@
-
 @model ToDoModel
 
 @{
     ViewData["Title"] = "Index";
+    @*List of todos passed from controller to show in table list*@
     var ToDoList = (IEnumerable<ToDoModel>)ViewData["ToDoList"];
 }
 
-<h1>Index</h1>
+<h1>List of ToDos</h1>
 
-@*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+@*This style attribute provides border styling and alternate color to cell*@
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black;
+    }
 
-<table class="table">
-    <thead>
+    td, th {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: lightgrey;
+    }
+</style>
+
+@*This is the main table to show all todos*@
+<table>
+    @*This inline style provides background yellow to header only*@
+    <thead style="background-color:yellow">
         <tr>
             <th>
                 Is Completed
@@ -33,18 +49,8 @@
         {
             <tr>
                 <td>
-                    @*<form asp-action="Edit">
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input asp-for="@item" type="hidden" />
-                                <input class="form-check-input" formaction="Edit" asp-for="@item.IsCompleted" /> @Html.DisplayNameFor(modelItem => item.IsCompleted)
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-primary" />
-                        </div>
-                    </form>*@
-                    <partial name="Edit" model="@item"/>
+                    @*This partial is used to show inline form to update Todo*@
+                    <partial name="_EditPartial" model="@item" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CompletionDate)
@@ -53,13 +59,13 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ToDoModelId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ToDoModelId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ToDoModelId">Delete</a>
+                    @*This partial is used to show inline form to delete Todo*@
+                    <partial name="_DeletePartial" model="@item" />
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<partial name="Create" class="ToDoModel"/>
+@*This partial is used to show inline form to create Todo*@
+<partial name="_CreatePartial" class="ToDoModel" />

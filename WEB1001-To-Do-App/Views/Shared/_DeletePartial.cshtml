@@ -1,0 +1,17 @@
+﻿@*Passed object of class ToDoModel*@
+@model WEB1001_To_Do_App.ToDoModel
+
+@{
+
+}
+@*This Partial deletes ToDo item on Click of Delete button action*@
+<div>
+    <form asp-action="Delete">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="@Model.ToDoModelId" />
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+

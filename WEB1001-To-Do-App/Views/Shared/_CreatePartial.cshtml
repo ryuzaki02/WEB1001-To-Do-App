@@ -1,22 +1,17 @@
+@*Passed class model ToDoModel*@
 @model WEB1001_To_Do_App.ToDoModel
 
 @{
-    ViewData["Title"] = "Create";
+
 }
 
-<h1>Create</h1>
-
-<h4>ToDoModel</h4>
+@*This Partial creates To do form to show: Is completed checkbox, Completion Date Calendar input, Description*@
+<h1>Create a new ToDo</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
-                </label>
-            </div>
             <div class="form-group">
                 <label asp-for="CompletionDate" class="control-label"></label>
                 <input asp-for="CompletionDate" class="form-control" />
@@ -34,9 +29,6 @@
     </div>
 </div>
 
-@*<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

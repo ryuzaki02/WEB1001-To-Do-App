@@ -1,0 +1,26 @@
+﻿@*Passed object of class ToDoModel*@
+@model WEB1001_To_Do_App.ToDoModel
+
+@{
+
+}
+@*This Partial updates IsCompleted check box with action*@
+<div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="@Model.ToDoModelId" />
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="@Model.IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
+            </label>
+        </div>
+    </form>
+</div>
+
+@*Java script to enable action on check box and submit the form to database*@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$(function () {
+        $("input[type=checkBox]").on('click', function () {
+            this.form.submit();
+        });
+    });</script>
